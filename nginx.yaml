@@ -3,13 +3,13 @@
   become: yes
   serial: 3 #so this dynamic attribute will execute this script play level per 3 servers at each time. if you provide both forks(ansible.cfg) and serial in play level, then also serial exectuion will takes place
   tasks:
-  - name: installing nginx
-    ansible.builtin.package:
-      name: nginx
-      state: present
+    - name: installing nginx
+      ansible.builtin.package:
+        name: nginx
+        state: present
 
-  - name: starting and enabling the nginx
-    ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+    - name: starting and enabling the nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
